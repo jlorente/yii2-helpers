@@ -1,0 +1,22 @@
+{
+    "name": "jlorente/yii2-helpers",
+    "description": "A collection of Yii2 helpers with a variety of purposes",
+    "keywords": ["yii2", "helper", "helpers", "iterator", "collection"],
+    "homepage": "https://github.com/jlorente/yii2-helpers",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jose Lorente Martin",
+            "email": "jose.lorente.martin@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "jlorente\\helpers\\": "src/"
+        }
+    }
+}
