@@ -5,7 +5,7 @@ A collection of Yii2 helpers with a variety of purposes
 
 ## Included helpers:
 
-*QueryStreamIterator* - QueryStreamIterator provides an Iterator for large query 
+**QueryStreamIterator** - Provides an Iterator for large query 
 resultsets that are likely to spend a large amount of memory. 
 
 ## Installation
