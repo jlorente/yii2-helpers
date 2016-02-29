@@ -7,7 +7,7 @@
  * @version     1.0
  */
 
-namespace custom\helpers;
+namespace jlorente\helpers;
 
 /**
  * Formatter to convert seconds into time representations.
