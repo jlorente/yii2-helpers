@@ -11,7 +11,7 @@ namespace jlorente\helpers;
 
 use Countable;
 use Iterator;
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\base\InvalidConfigException;
 use yii\base\InvalidParamException;
 use yii\db\QueryInterface;
@@ -35,7 +35,7 @@ use yii\db\QueryInterface;
  * 
  * @author José Lorente <jose.lorente.martin@gmail.com>
  */
-class QueryStreamIterator extends Object implements Countable, Iterator {
+class QueryStreamIterator extends BaseObject implements Countable, Iterator {
 
     //Configurable vars
     /**
@@ -131,6 +131,7 @@ class QueryStreamIterator extends Object implements Countable, Iterator {
      * 
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count() {
         if ($this->n === null) {
             $this->n = $this->getQuery()->count();
@@ -143,6 +144,7 @@ class QueryStreamIterator extends Object implements Countable, Iterator {
      * 
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function current() {
         if (isset($this->dataStream[$this->i]) === false) {
             $this->loadDataStream();
@@ -153,6 +155,7 @@ class QueryStreamIterator extends Object implements Countable, Iterator {
     /**
      * Increments the internal counters of the Iterator.
      */
+    #[\ReturnTypeWillChange]
     public function next() {
         ++$this->i;
         ++$this->p;
@@ -163,6 +166,7 @@ class QueryStreamIterator extends Object implements Countable, Iterator {
      * 
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function key() {
         return $this->p;
     }
@@ -173,6 +177,7 @@ class QueryStreamIterator extends Object implements Countable, Iterator {
      * 
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function valid() {
         return $this->p < $this->n;
     }
@@ -180,6 +185,7 @@ class QueryStreamIterator extends Object implements Countable, Iterator {
     /**
      * Sets the internal counters of the iterators to 0.
      */
+    #[\ReturnTypeWillChange]
     public function rewind() {
         $this->i = $this->p = 0;
         $this->dataStream = null;
